@@ -1,36 +1,55 @@
-/* Base Styles */
+:root {
+    --beige-lightest: #f8f6f1;
+    --beige-light: #ebe5d9;
+    --beige: #d6ceb8;
+    --beige-dark: #c1b496;
+    --gray-light: #e0e0e0;
+    --gray: #888888;
+    --gray-dark: #444444;
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --shadow: rgba(0, 0, 0, 0.1);
+}/* Base Styles */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light gray background */
-    color: #333; /* Dark gray text */
+    color: var(--gray-dark);
+    background-color: var(--beige-lightest);
+    font-family: 'Open Sans', sans-serif; /* Updated font */
+    font-size: 16px;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #e0e0e0; /* Light gray header background */
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #ccc; /* Light gray border */
+    background-color: var(--beige-dark);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px var(--shadow);
 }
 
 header h1 {
-    color: #6c6c6c; /* Medium gray text */
+    color: var(--black);
 }
 
 header h2 {
-    color: #999; /* Light gray text */
+    color: var(--black);
 }
 
 header a {
     color: #007bff; /* Blue for links */
 }
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.75rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.25rem; }
 
 main {
     padding: 20px;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
-    background-color: #fff; /* White background for form */
+    background-color: #e0e0e0; /* White background for form */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
