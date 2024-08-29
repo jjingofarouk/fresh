@@ -1,47 +1,59 @@
+// Utility function for smooth scrolling
+function smoothScroll(target) {
+    const element = document.querySelector(target);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.error(`Element with selector ${target} not found.`);
+    }
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        smoothScroll(this.getAttribute('href'));
     });
 });
 
-// Toggle visibility of sections
+// Toggle visibility of sections with transition and ARIA attributes
 document.querySelectorAll('h2').forEach(heading => {
+    heading.setAttribute('role', 'button');
+    heading.setAttribute('tabindex', '0');
     heading.addEventListener('click', function () {
         const sectionContent = this.nextElementSibling;
-        if (sectionContent.style.display === 'none' || !sectionContent.style.display) {
-            sectionContent.style.display = 'block';
-        } else {
-            sectionContent.style.display = 'none';
+        if (sectionContent) {
+            sectionContent.classList.toggle('hidden');
+            sectionContent.setAttribute('aria-expanded', sectionContent.classList.contains('hidden') ? 'false' : 'true');
         }
     });
 });
 
-// Add an active class to the current section link in the navbar
+// Debounced scroll event for updating the active link
+let debounceTimeout;
 window.addEventListener('scroll', () => {
-    let currentSection = '';
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+        let currentSectionId = '';
+        document.querySelectorAll('section').forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 60) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
 
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    document.querySelectorAll('nav ul li a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(currentSection)) {
-            link.classList.add('active');
-        }
-    });
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(currentSectionId)) {
+                link.classList.add('active');
+            }
+        });
+    }, 100); // Adjust debounce time as needed
 });
 
-// Optional: Light/Dark mode toggle
+// Optional: Light/Dark mode toggle with localStorage persistence
 const toggleButton = document.createElement('button');
-toggleButton.textContent = 'Toggle Light/Dark Mode';
+toggleButton.textContent = localStorage.getItem('darkMode') === 'true' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
 toggleButton.style.position = 'fixed';
 toggleButton.style.bottom = '20px';
 toggleButton.style.right = '20px';
@@ -55,12 +67,9 @@ toggleButton.style.cursor = 'pointer';
 document.body.appendChild(toggleButton);
 
 toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-        toggleButton.textContent = 'Switch to Light Mode';
-    } else {
-        toggleButton.textContent = 'Switch to Dark Mode';
-    }
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    toggleButton.textContent = isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode';
 });
 
 // Dark mode styles
@@ -95,3 +104,11 @@ const styleSheet = document.createElement('style');
 styleSheet.type = 'text/css';
 styleSheet.innerText = darkModeStyles;
 document.head.appendChild(styleSheet);
+
+// Initialize dark mode based on saved preference
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        toggleButton.textContent = 'Switch to Light Mode';
+    }
+});
