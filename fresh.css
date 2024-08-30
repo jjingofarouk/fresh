@@ -9,6 +9,8 @@
     --white: #ffffff;
     --black: #1a1a1a;
     --shadow: rgba(0, 0, 0, 0.1);
+        --accent-color: #c79500; /* Dark mustard yellow */
+
 }
 
 
@@ -454,8 +456,8 @@ footer {
 }
 
 .footer-content a.btn {
-    background-color: var(--primary-color); /* Customize this */
-    color: var(--white);
+    background-color: var(--accent-color); /* Dark mustard yellow */
+    color: var(--white); /* White text */
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
