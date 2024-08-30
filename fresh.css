@@ -66,11 +66,16 @@ header {
   color: var(--primary-color);
 }
 
+.menu-icon {
+  display: none;
+}
+
 .menu-icon img {
   height: 24px;
   width: auto;
 }
 
+/* Responsive Header */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -192,6 +197,7 @@ main {
   padding: 40px 20px;
 }
 
+/* Section Styles */
 .parent, .values, .reach, .relevance, .solution, .innovation, .area, .progress {
   background-color: var(--beige);
   color: var(--gray-dark);
@@ -239,12 +245,12 @@ footer {
 }
 
 .footer-content .btn-signup:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-color);
   transform: translateY(-2px);
 }
 
 .footer-content .btn-signup:focus {
-  outline: 2px solid var(--primary-dark);
+  outline: 2px solid var(--primary-color);
 }
 
 .footer-links {
@@ -273,4 +279,54 @@ footer {
 .footer-links a:hover {
   color: var(--accent-color);
   transform: translateY(-2px);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+  .nav-links {
+    padding: 0.5rem;
+  }
+
+  .team-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  main {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1rem; }
+  
+  .parent, .values, .reach, .relevance, .solution, .innovation, .area, .progress {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .team-container {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1.1rem; }
+  h6 { font-size: 1rem; }
 }
