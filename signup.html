@@ -1,57 +1,51 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | FreshKeep</title>
-    <script src="signup.js" defer></script>
-<link rel="stylesheet" href="signup.css"> <!-- Link to your CSS file -->
-
-	
+    <link rel="stylesheet" href="signup.css"> <!-- Link to your CSS file -->
 </head>
 <body>
     <header>
-        <h1>Signup</h1>
-	<h2>Already a member? <a href="login.html">Log in</a></h2>
-
+        <h1>Sign Up</h1>
+        <p>Already a member? <a href="login.html">Log in</a></p>
     </header>
     
     <main>
         <form class="signup-form" id="signupForm" novalidate>
-            <!-- Existing form content -->
-            
             <!-- Personal Information Section -->
             <fieldset class="form-section">
-                <legend><strong>Personal Information</strong></legend>
+                <legend>Personal Information</legend>
                 <div class="form-group">
                     <label for="fname">First name</label>
-                    <input type="text" id="fname" name="fname" placeholder="Enter your first name" required autocomplete="given-name">
+                    <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
                     <span class="error" id="fnameError"></span>
                 </div>
                 <div class="form-group">
                     <label for="lname">Last name</label>
-                    <input type="text" id="lname" name="lname" placeholder="Enter your last name" required autocomplete="family-name">
+                    <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
                     <span class="error" id="lnameError"></span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" placeholder="example@email.com" required autocomplete="email">
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
                     <span class="error" id="emailError"></span>
                 </div>
                 <div class="form-group">
                     <label for="pass">Password</label>
-                    <input type="password" id="pass" name="pass" minlength="8" maxlength="128" placeholder="Create a strong password" required>
+                    <input type="password" id="pass" name="pass" minlength="8" placeholder="Create a strong password" required>
                     <span class="error" id="passError"></span>
                     <meter id="password-strength-meter" max="4" low="2" high="3" optimum="4"></meter>
                 </div>
                 <div class="form-group">
                     <label for="confirmPass">Confirm Password</label>
-                    <input type="password" id="confirmPass" name="confirmPass" minlength="8" maxlength="128" placeholder="Confirm your password" required>
+                    <input type="password" id="confirmPass" name="confirmPass" minlength="8" placeholder="Confirm your password" required>
                     <span class="error" id="confirmPassError"></span>
                 </div>
                 <div class="form-group">
                     <label for="tel">Phone (optional)</label>
-                    <input type="tel" id="tel" name="tel" placeholder="(123) 456-7890" autocomplete="tel">
+                    <input type="tel" id="tel" name="tel" placeholder="(123) 456-7890">
                     <span class="error" id="telError"></span>
                 </div>
                 <div class="form-group">
@@ -61,14 +55,10 @@
                 </div>
             </fieldset>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
-
             <!-- Additional Information Section -->
             <fieldset class="form-section">
                 <legend>Additional Information</legend>
-                <div class="form-groupsâ€>
+                <div class="form-group">
                     <label>Title</label>
                     <div class="radio-group">
                         <input type="radio" id="mr" name="title" value="Mr.">
@@ -86,430 +76,17 @@
                 <div class="form-group">
                     <label for="country">Country</label>
                     <select id="country" name="country" required>
-<option value="Afghanistan">Afghanistan</option>
-                <option value="Ã…land Islands">Ã…land Islands</option>
-                <option value="Albania">Albania</option>
-                <option value="Algeria">Algeria</option>
-                <option value="American Samoa">American Samoa</option>
-                <option value="Andorra">Andorra</option>
-                <option value="Angola">Angola</option>
-                <option value="Anguilla">Anguilla</option>
-                <option value="Antarctica">Antarctica</option>
-                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Armenia">Armenia</option>
-                <option value="Aruba">Aruba</option>
-                <option value="Australia">Australia</option>
-                <option value="Austria">Austria</option>
-                <option value="Azerbaijan">Azerbaijan</option>
-                <option value="Bahamas">Bahamas</option>
-                <option value="Bahrain">Bahrain</option>
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="Barbados">Barbados</option>
-                <option value="Belarus">Belarus</option>
-                <option value="Belgium">Belgium</option>
-                <option value="Belize">Belize</option>
-                <option value="Benin">Benin</option>
-                <option value="Bermuda">Bermuda</option>
-                <option value="Bhutan">Bhutan</option>
-                <option value="Bolivia">Bolivia</option>
-                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                <option value="Botswana">Botswana</option>
-                <option value="Bouvet Island">Bouvet Island</option>
-                <option value="Brazil">Brazil</option>
-                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                <option value="Brunei Darussalam">Brunei Darussalam</option>
-                <option value="Bulgaria">Bulgaria</option>
-                <option value="Burkina Faso">Burkina Faso</option>
-                <option value="Burundi">Burundi</option>
-                <option value="Cambodia">Cambodia</option>
-                <option value="Cameroon">Cameroon</option>
-                <option value="Canada">Canada</option>
-                <option value="Cape Verde">Cape Verde</option>
-                <option value="Cayman Islands">Cayman Islands</option>
-                <option value="Central African Republic">Central African Republic</option>
-                <option value="Chad">Chad</option>
-                <option value="Chile">Chile</option>
-                <option value="China">China</option>
-                <option value="Christmas Island">Christmas Island</option>
-                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                <option value="Colombia">Colombia</option>
-                <option value="Comoros">Comoros</option>
-                <option value="Congo">Congo</option>
-                <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
-                <option value="Cook Islands">Cook Islands</option>
-                <option value="Costa Rica">Costa Rica</option>
-                <option value="Cote D'ivoire">Cote D'ivoire</option>
-                <option value="Croatia">Croatia</option>
-                <option value="Cuba">Cuba</option>
-                <option value="Cyprus">Cyprus</option>
-                <option value="Czech Republic">Czech Republic</option>
-                <option value="Denmark">Denmark</option>
-                <option value="Djibouti">Djibouti</option>
-                <option value="Dominica">Dominica</option>
-                <option value="Dominican Republic">Dominican Republic</option>
-                <option value="Ecuador">Ecuador</option>
-                <option value="Egypt">Egypt</option>
-                <option value="El Salvador">El Salvador</option>
-                <option value="Equatorial Guinea">Equatorial Guinea</option>
-                <option value="Eritrea">Eritrea</option>
-                <option value="Estonia">Estonia</option>
-                <option value="Ethiopia">Ethiopia</option>
-                <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-                <option value="Faroe Islands">Faroe Islands</option>
-                <option value="Fiji">Fiji</option>
-                <option value="Finland">Finland</option>
-                <option value="France">France</option>
-                <option value="French Guiana">French Guiana</option>
-                <option value="French Polynesia">French Polynesia</option>
-                <option value="French Southern Territories">French Southern Territories</option>
-                <option value="Gabon">Gabon</option>
-                <option value="Gambia">Gambia</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Germany">Germany</option>
-                <option value="Ghana">Ghana</option>
-                <option value="Gibraltar">Gibraltar</option>
-                <option value="Greece">Greece</option>
-                <option value="Greenland">Greenland</option>
-                <option value="Grenada">Grenada</option>
-                <option value="Guadeloupe">Guadeloupe</option>
-                <option value="Guam">Guam</option>
-                <option value="Guatemala">Guatemala</option>
-                <option value="Guernsey">Guernsey</option>
-                <option value="Guinea">Guinea</option>
-                <option value="Guinea-bissau">Guinea-bissau</option>
-                <option value="Guyana">Guyana</option>
-                <option value="Haiti">Haiti</option>
-                <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
-                <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
-                <option value="Honduras">Honduras</option>
-                <option value="Hong Kong">Hong Kong</option>
-                <option value="Hungary">Hungary</option>
-                <option value="Iceland">Iceland</option>
-                <option value="India">India</option>
-                <option value="Indonesia">Indonesia</option>
-                <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
-                <option value="Iraq">Iraq</option>
-                <option value="Ireland">Ireland</option>
-                <option value="Isle of Man">Isle of Man</option>
-                <option value="Israel">Israel</option>
-                <option value="Italy">Italy</option>
-                <option value="Jamaica">Jamaica</option>
-                <option value="Japan">Japan</option>
-                <option value="Jersey">Jersey</option>
-                <option value="Jordan">Jordan</option>
-                <option value="Kazakhstan">Kazakhstan</option>
-                <option value="Kenya">Kenya</option>
-                <option value="Kiribati">Kiribati</option>
-                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
-                <option value="Korea, Republic of">Korea, Republic of</option>
-                <option value="Kuwait">Kuwait</option>
-                <option value="Kyrgyzstan">Kyrgyzstan</option>
-                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
-                <option value="Latvia">Latvia</option>
-                <option value="Lebanon">Lebanon</option>
-                <option value="Lesotho">Lesotho</option>
-                <option value="Liberia">Liberia</option>
-                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-                <option value="Liechtenstein">Liechtenstein</option>
-                <option value="Lithuania">Lithuania</option>
-                <option value="Luxembourg">Luxembourg</option>
-                <option value="Macao">Macao</option>
-                <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
-                <option value="Madagascar">Madagascar</option>
-                <option value="Malawi">Malawi</option>
-                <option value="Malaysia">Malaysia</option>
-                <option value="Maldives">Maldives</option>
-                <option value="Mali">Mali</option>
-                <option value="Malta">Malta</option>
-                <option value="Marshall Islands">Marshall Islands</option>
-                <option value="Martinique">Martinique</option>
-                <option value="Mauritania">Mauritania</option>
-                <option value="Mauritius">Mauritius</option>
-                <option value="Mayotte">Mayotte</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                <option value="Moldova, Republic of">Moldova, Republic of</option>
-                <option value="Monaco">Monaco</option>
-                <option value="Mongolia">Mongolia</option>
-                <option value="Montenegro">Montenegro</option>
-                <option value="Montserrat">Montserrat</option>
-                <option value="Morocco">Morocco</option>
-                <option value="Mozambique">Mozambique</option>
-                <option value="Myanmar">Myanmar</option>
-                <option value="Namibia">Namibia</option>
-                <option value="Nauru">Nauru</option>
-                <option value="Nepal">Nepal</option>
-                <option value="Netherlands">Netherlands</option>
-                <option value="Netherlands Antilles">Netherlands Antilles</option>
-                <option value="New Caledonia">New Caledonia</option>
-                <option value="New Zealand">New Zealand</option>
-                <option value="Nicaragua">Nicaragua</option>
-                <option value="Niger">Niger</option>
-                <option value="Nigeria">Nigeria</option>
-                <option value="Niue">Niue</option>
-                <option value="Norfolk Island">Norfolk Island</option>
-                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                <option value="Norway">Norway</option>
-                <option value="Oman">Oman</option>
-                <option value="Pakistan">Pakistan</option>
-                <option value="Palau">Palau</option>
-                <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
-                <option value="Panama">Panama</option>
-                <option value="Papua New Guinea">Papua New Guinea</option>
-                <option value="Paraguay">Paraguay</option>
-                <option value="Peru">Peru</option>
-                <option value="Philippines">Philippines</option>
-                <option value="Pitcairn">Pitcairn</option>
-                <option value="Poland">Poland</option>
-                <option value="Portugal">Portugal</option>
-                <option value="Puerto Rico">Puerto Rico</option>
-                <option value="Qatar">Qatar</option>
-                <option value="Reunion">Reunion</option>
-                <option value="Romania">Romania</option>
-                <option value="Russian Federation">Russian Federation</option>
-                <option value="Rwanda">Rwanda</option>
-                <option value="Saint Helena">Saint Helena</option>
-                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                <option value="Saint Lucia">Saint Lucia</option>
-                <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
-                <option value="Samoa">Samoa</option>
-                <option value="San Marino">San Marino</option>
-                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                <option value="Saudi Arabia">Saudi Arabia</option>
-                <option value="Senegal">Senegal</option>
-                <option value="Serbia">Serbia</option>
-                <option value="Seychelles">Seychelles</option>
-                <option value="Sierra Leone">Sierra Leone</option>
-                <option value="Singapore">Singapore</option>
-                <option value="Slovakia">Slovakia</option>
-                <option value="Slovenia">Slovenia</option>
-                <option value="Solomon Islands">Solomon Islands</option>
-                <option value="Somalia">Somalia</option>
-                <option value="South Africa">South Africa</option>
-                <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
-                <option value="Spain">Spain</option>
-                <option value="Sri Lanka">Sri Lanka</option>
-                <option value="Sudan">Sudan</option>
-                <option value="Suriname">Suriname</option>
-                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                <option value="Swaziland">Swaziland</option>
-                <option value="Sweden">Sweden</option>
-                <option value="Switzerland">Switzerland</option>
-                <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                <option value="Taiwan">Taiwan</option>
-                <option value="Tajikistan">Tajikistan</option>
-                <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
-                <option value="Thailand">Thailand</option>
-                <option value="Timor-leste">Timor-leste</option>
-                <option value="Togo">Togo</option>
-                <option value="Tokelau">Tokelau</option>
-                <option value="Tonga">Tonga</option>
-                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                <option value="Tunisia">Tunisia</option>
-                <option value="Turkey">Turkey</option>
-                <option value="Turkmenistan">Turkmenistan</option>
-                <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                <option value="Tuvalu">Tuvalu</option>
-                <option value="Uganda">Uganda</option>
-                <option value="Ukraine">Ukraine</option>
-                <option value="United Arab Emirates">United Arab Emirates</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="United States">United States</option>
-                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-                <option value="Uruguay">Uruguay</option>
-                <option value="Uzbekistan">Uzbekistan</option>
-                <option value="Vanuatu">Vanuatu</option>
-                <option value="Venezuela">Venezuela</option>
-                <option value="Viet Nam">Viet Nam</option>
-                <option value="Virgin Islands, British">Virgin Islands, British</option>
-                <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                <option value="Wallis and Futuna">Wallis and Futuna</option>
-                <option value="Western Sahara">Western Sahara</option>
-                <option value="Yemen">Yemen</option>
-                <option value="Zambia">Zambia</option>
-                <option value="Zimbabwe">Zimbabwe</option>                        <!-- Add country options here -->
+                        <option value="">Select your country</option>
+                        <!-- List of countries -->
+                        <option value="United States">United States</option>
+                        <option value="Canada">Canada</option>
+                        <!-- Add other countries as needed -->
                     </select>
-                    <span class="error" id="countryError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender (optional)</label>
-                    <select id="gender" name="gender">
-                        <option value="male">Male</option>
-  			<option value="female">Female</option> Â  
-  			<option value="non-binary">Non-binary</option>
-  			<option value="transgender">Transgender</option>
-  			<option value="agender">Agender</option> Â  
-  			<option value="genderqueer">Genderqueer</option>
-  			<option value="genderfluid">Genderfluid</option> Â  
- 			<option value="intersex">Intersex</option>
-  			<option value="prefer not to say">Prefer not to say</option>
-  			<option value="other">Other</option>                    		    </select>
                 </div>
             </fieldset>
 
-            <!-- Terms and Conditions Section -->
-            <fieldset class="form-section">
-                <legend>Terms and Conditions</legend>
-                <div class="form-group">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I agree to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a></label>
-                    <span class="error" id="termsError"></span>
-                </div>
-            </fieldset>
-
-            <!-- Form Actions -->
-            <div class="form-actions">
-                <button type="submit" class="btn btn-submit">Create Account</button>
-            </div>
+            <button type="submit">Sign Up</button>
         </form>
-
     </main>
-
-    <!-- Contact Section -->
-    
-<!-- Additional Information Section -->
-
-
-
-    <footer>
-    <div class="footer-container">
-        <section class="contact-section">
-            <h2>Contact Us</h2>
-            <ul class="contact-list">
-                <li>
-                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
-                        <!-- Email icon path -->
-                        <path d="M2 4h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" fill="currentColor"/>
-
-                    </svg>
-                    <a href="mailto:support@freshkeep.com">freshkeep@gmail.com</a>
-                </li>
-                <li>
-                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
-                        <!-- Phone icon path -->
-                        <path d="M3.58 1.58a1 1 0 0 1 1.32-.08l1.9 1.9a1 1 0 0 1 .08 1.32l-1.9 1.9a1 1 0 0 1-1.32-.08L2.08 2.82a1 1 0 0 1-.08-1.32l1.58-1.58zM13.7 4.3a1 1 0 0 1 1.4.1l2.1 4.2a1 1 0 0 1-.1 1.4l-2.1 2.1a1 1 0 0 1-1.4-.1L9.8 8.9a1 1 0 0 1 .1-1.4l2.1-2.1z" fill="currentColor"/>
-
-                    </svg>
-                    <a href="tel:+1234567890">(+256) 777-421-601</a>
-                </li>
-            </ul>
-        </section>
-
-        <nav class="social-nav" aria-label="Social media links">
-            <ul class="social-list">
-                <li>
-                    <a href="https://facebook.com/freshkeep" target="_blank" rel="noopener noreferrer">
-                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-                            <!-- Facebook icon path -->
-                            <path d="M22 12h-8v10h-4V12H6V8h4V6a6 6 0 0 1 6-6h4v4h-2a2 2 0 0 0-2 2v2h4l-1 4z" fill="currentColor"/>
-
-                        </svg>
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/freshkeep" target="_blank" rel="noopener noreferrer">
-                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-                            <!-- Twitter icon path -->
-                            <path d="M22 5.4a8.1 8.1 0 0 1-2.4.7A4 4 0 0 0 21.4 3a8 8 0 0 1-2.5.9A4 4 0 0 0 16.9 3a4.1 4.1 0 0 0-4.1 4.1c0 .3 0 .6.1.8A11.5 11.5 0 0 1 3.4 4.7a4 4 0 0 0-.5 2A4.1 4.1 0 0 0 5.7 11a4.2 4.2 0 0 1-1.8-.5v.1c0 3.8 2.8 7.1 6.4 7.8a8.1 8.1 0 0 1-2.1.3c-.5 0-1-.1-1.5-.1a8.2 8.2 0 0 0 7.6 5.6A8.1 8.1 0 0 0 22 12a8.5 8.5 0 0 0 .1-1.5A8 8 0 0 0 22 5.4z" fill="currentColor"/>
-
-                        </svg>
-                        <span class="sr-only">Twitter</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/freshkeep" target="_blank" rel="noopener noreferrer">
-                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-                            <!-- Instagram icon path -->
-                            <path d="M12 2.2a9.8 9.8 0 1 0 0 19.6 9.8 9.8 0 0 0 0-19.6zm0 18a8.2 8.2 0 1 1 0-16.4 8.2 8.2 0 0 1 0 16.4zm4.9-12.8a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0zm-4.9 2.6a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6zm0 6.4a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2z" fill="currentColor"/>
-
-                        </svg>
-                        <span class="sr-only">Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://linkedin.com/company/freshkeep" target="_blank" rel="noopener noreferrer">
-                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-                            <!-- LinkedIn icon path -->
-                            <path d="M20 0H4a4 4 0 0 0-4 4v16a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm-11 18H6v-8h3v8zm-1.5-9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm13.5 9.5h-3v-4.5c0-1.1-.4-1.9-1.4-1.9-.8 0-1.3.5-1.5 1.1-.1.3-.1.8-.1 1.2v4.1h-3v-8h3v1.1c.5-.8 1.4-1.1 2.3-1.1 1.7 0 3 1.1 3 3.5v4.4z" fill="currentColor"/>
-
-                        </svg>
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="footer-actions">
-            <a href="index.html" class="btn btn-secondary">Back to Home</a>
-        </div>
-
-        <p class="copyright">&copy; 2024 FreshKeep. All rights reserved.</p>
-    </div>
-</footer>
-    <script>
-        <script>
-        document.getElementById('signupForm').addEventListener('submit', function (event) {
-            let formIsValid = true;
-
-            // Check for first name
-            const fname = document.getElementById('fname').value;
-            if (fname === '') {
-                formIsValid = false;
-                document.getElementById('fnameError').textContent = 'First name is required.';
-            } else {
-                document.getElementById('fnameError').textContent = '';
-            }
-
-            // Check for last name
-            const lname = document.getElementById('lname').value;
-            if (lname === '') {
-                formIsValid = false;
-                document.getElementById('lnameError').textContent = 'Last name is required.';
-            } else {
-                document.getElementById('lnameError').textContent = '';
-            }
-
-            // Check for valid email
-            const email = document.getElementById('email').value;
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-            if (email === '' || !email.match(emailPattern)) {
-                formIsValid = false;
-                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
-            } else {
-                document.getElementById('emailError').textContent = '';
-            }
-
-            // Check for password match
-            const password = document.getElementById('pass').value;
-            const confirmPassword = document.getElementById('confirmPass').value;
-            if (password !== confirmPassword) {
-                formIsValid = false;
-                document.getElementById('confirmPassError').textContent = 'Passwords do not match.';
-            } else {
-                document.getElementById('confirmPassError').textContent = '';
-            }
-
-            if (!formIsValid) {
-                event.preventDefault(); // Prevent form submission
-            }
-        });
-
-        // Password strength meter
-        const password = document.getElementById('pass');
-        const meter = document.getElementById('password-strength-meter');
-        password.addEventListener('input', function () {
-            let val = password.value;
-            let strength = 0;
-            if (val.length > 8) strength++;
-            if (val.match(/[A-Z]/)) strength++;
-            if (val.match(/[0-9]/)) strength++;
-            if (val.match(/[@$!%*?&#]/)) strength++;
-            meter.value = strength;
-        });
-    </script>
 </body>
-
 </html>
