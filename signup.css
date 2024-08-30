@@ -28,7 +28,7 @@ body {
 header {
     background-color: var(--beige-light);
     padding: 20px;
-    box-shadow: 0 2px 4px var(--shadow);
+    box-shadow: 0 1px 3px var(--shadow);
     color: var(--black);
     text-align: center;
     border-bottom: 1px solid var(--gray-light);
@@ -40,78 +40,81 @@ header h1, header h2 {
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 700;
 }
 
 header h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 400;
+    color: var(--gray-dark);
 }
 
 main {
-    max-width: 700px;
+    max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 30px;
     background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 2px 6px var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 3px 6px var(--shadow);
 }
 
 .contact-us {
     text-align: center;
-    margin: 20px auto;
-    max-width: 500px;
+    margin: 30px auto;
+    max-width: 600px;
 }
 
 .contact-us h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     margin-bottom: 20px;
     font-weight: 600;
+    color: var(--primary-color);
 }
 
 .contact-us .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .contact-us .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 500;
+    color: var(--gray-dark);
 }
 
 .contact-us .form-group input,
 .contact-us .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--gray-light);
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1em;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-us .form-group input:focus,
 .contact-us .form-group textarea:focus {
     border-color: var(--gray);
-    box-shadow: 0 0 4px var(--shadow);
+    box-shadow: 0 0 6px var(--shadow);
     outline: none;
 }
 
 .contact-us button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     background-color: var(--accent-color);
     color: var(--white);
     font-size: 1em;
     cursor: pointer;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px var(--shadow);
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px var(--shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-us button:hover {
     background-color: #a06d00; /* Darker mustard on hover */
-    box-shadow: 0 4px 8px var(--shadow);
+    box-shadow: 0 5px 10px var(--shadow);
 }
 
 form {
@@ -120,34 +123,34 @@ form {
 }
 
 .form-section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 form legend {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
     color: var(--primary-color);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .form-group label {
     display: block;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--gray-light);
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1em;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
@@ -163,12 +166,12 @@ form legend {
 
 .radio-group {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     align-items: center;
 }
 
 .radio-group input[type="radio"] {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .radio-group label {
@@ -178,8 +181,8 @@ form legend {
 
 .meter {
     width: 100%;
-    height: 4px;
-    border-radius: 2px;
+    height: 6px;
+    border-radius: 3px;
     background: var(--gray-light);
 }
 
@@ -202,9 +205,9 @@ form legend {
 footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
-    padding: 20px;
+    padding: 30px;
     font-size: 0.875em;
-    box-shadow: 0 -2px 4px var(--shadow);
+    box-shadow: 0 -3px 6px var(--shadow);
     text-align: center;
 }
 
@@ -214,11 +217,11 @@ footer {
 }
 
 .contact-section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .contact-section h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
     margin-bottom: 15px;
     font-weight: 600;
@@ -233,11 +236,11 @@ footer {
 .contact-list li {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .contact-list li svg {
-    margin-right: 10px;
+    margin-right: 12px;
     fill: var(--primary-color);
 }
 
@@ -252,7 +255,7 @@ footer {
 }
 
 .social-nav {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .social-list {
@@ -264,7 +267,7 @@ footer {
 }
 
 .social-list li {
-    margin: 0 10px;
+    margin: 0 12px;
 }
 
 .social-list a {
@@ -272,8 +275,8 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     transition: color 0.3s ease;
 }
 
@@ -282,23 +285,23 @@ footer {
 }
 
 .social-list svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     fill: currentColor;
 }
 
 .footer-actions {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .footer-actions .btn {
     background-color: var(--accent-color);
     color: var(--white);
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 12px 24px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .footer-actions .btn:hover {
@@ -313,11 +316,19 @@ footer {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
-    form {
+    header h2 {
+        font-size: 1.2rem;
+    }
+
+    main {
         padding: 20px;
+    }
+
+    .contact-us h2 {
+        font-size: 2rem;
     }
 
     .form-group input,
@@ -326,7 +337,7 @@ footer {
     }
 
     .contact-section h2 {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
     }
 
     .social-list {
