@@ -27,7 +27,6 @@ header {
     background-color: var(--beige-dark);
     padding: 20px 0;
     box-shadow: 0 2px 10px var(--shadow);
-     position: fixed; /* Make the header fixed */
     top: 0; /* Ensure it sticks to the top */
     width: 100%; /* Full width */
     z-index: 1000; /* Make sure it's above other content */
@@ -182,17 +181,16 @@ main {
 }
 
 footer {
-    background-color: var(--beige-dark);
-    color: var(--gray-dark);
+    background-color: #f1f1f1;
+    color: #666;
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
+    padding: 40px 20px;
     box-shadow: 0 -2px 10px var(--shadow);
     width: 100%;
 }
 
 .footer-content {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .footer-content p {
