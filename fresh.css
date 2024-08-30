@@ -39,12 +39,14 @@ body {
             justify-content: space-between;
             align-items: center;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img {
+    height: 40px; /* Adjust as needed */
+    width: auto;  /* Maintain aspect ratio */
         }
 
         .nav-links {
@@ -69,16 +71,15 @@ body {
             color: var(--primary-color);
         }
 
-        .menu-icon {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+.menu-icon img {
+    height: 24px; /* Adjust as needed */
+    width: auto;  /* Maintain aspect ratio */
+}
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                flex-direction: column;
+                flex-direction: row;
                 position: absolute;
                 top: 100%;
                 left: 0;
