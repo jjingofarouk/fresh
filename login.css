@@ -1,3 +1,15 @@
+/* Root Variables */
+:root {
+    --beige-lightest: #fdf7ec;
+    --beige-light: #f7e4c9;
+    --beige-dark: #d4a35a;
+    --gray-dark: #4b4b4b;
+    --gray-light: #d1d1d1;
+    --gray: #7a7a7a;
+    --white: #ffffff;
+    --accent-color: #c79500; /* Dark mustard yellow */
+}
+
 /* Basic Reset */
 body {
     margin: 0;
@@ -115,7 +127,7 @@ a:hover {
     background-color: #4285F4; /* Google blue */
 }
 
-.social-button.google:hover {
+social-button.google:hover {
     background-color: #357AE8;
 }
 
@@ -123,7 +135,6 @@ a:hover {
     background-color: #3B5998; /* Facebook blue */
 }
 
-.social-button.facebook:hover
 .social-button.facebook:hover {
     background-color: #2D4373;
 }
