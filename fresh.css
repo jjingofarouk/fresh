@@ -22,6 +22,7 @@ body {
   background-color: var(--beige-lightest);
   color: var(--gray-dark);
   box-sizing: border-box;
+  width: 100%;
 }
 
 /* Header styles */
@@ -197,7 +198,7 @@ h3 {
 
 /* Main Content */
 main {
-  max-width: 1200px;
+width: 100%;
   margin: 0 auto;
   padding: 40px 20px;
   box-sizing: border-box;
