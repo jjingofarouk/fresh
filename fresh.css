@@ -191,37 +191,47 @@ main {
     margin-bottom: 40px;
 }
 
+/* Footer Styling */
 footer {
-    background-color: #f1f1f1;
-    color: #666;
+    background-color: var(--beige-dark); /* Softer color for a modern look */
+    color: var(--white); /* Contrast for better readability */
     text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 -2px 10px var(--shadow);
+    padding: 50px 20px; /* Increased padding for spacious feel */
+    box-shadow: 0 -4px 15px var(--shadow); /* Slightly larger shadow for depth */
     width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
+/* Footer Content Styling */
 .footer-content {
-    margin-bottom: 0px;
+    margin-bottom: 0;
+    font-size: 1rem; /* Standard font size for consistency */
 }
 
 .footer-content p {
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Increased spacing for better readability */
+    line-height: 1.6;
 }
 
+/* Button Styling */
 .footer-content a.btn {
-    background-color: var(--primary-color); /* Customize this */
+    background-color: var(--accent-color); /* Accent color for emphasis */
     color: var(--white);
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px; /* Slightly larger button */
+    border-radius: 50px; /* Rounded corners for modern look */
     font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .footer-content a.btn:hover {
-    background-color: var(--primary-dark); /* Customize this */
+    background-color: var(--accent-dark); /* Darker shade on hover */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
 }
 
+/* Footer Links Styling */
 .footer-links {
-    margin-top: 20px;
+    margin-top: 30px; /* More space for better separation */
 }
 
 .footer-links ul {
@@ -229,20 +239,23 @@ footer {
     list-style: none;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .footer-links li {
-    margin: 0 15px;
+    margin: 10px 20px; /* Increased spacing for better readability */
 }
 
 .footer-links a {
-    color: var(--gray-dark);
+    color: var(--white); /* White for consistency with footer color */
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 600; /* Slightly bolder for emphasis */
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .footer-links a:hover {
-    color: var(--black);
+    color: var(--accent-color); /* Accent color on hover */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
 }
 
 /* Team Section Styles */
