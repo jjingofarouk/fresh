@@ -16,7 +16,7 @@
 body {
     color: var(--gray-dark);
     background-color: var(--beige-lightest);
-    font-family: 'Open Sans', sans-serif; /* Updated font */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
@@ -101,9 +101,6 @@ body {
             }
 
 /* Additional spacing for content below the fixed header */
-body {
-    padding-top: 80px; /* Adjust based on header height */
-}
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--black);
@@ -194,11 +191,14 @@ h3 {
         max-width: 100%;
     }
 }
-
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
 }
 
 .parent, .values, .reach, .relevance, .solution, .innovation {
