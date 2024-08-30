@@ -105,9 +105,10 @@ main {
     color: var(--white);
     padding: 12px 24px;
     border-radius: 6px;
-    text-decoration: none;
+    border: none;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-us button:hover {
@@ -148,12 +149,13 @@ form legend {
     border: 1px solid var(--gray-light);
     border-radius: 8px;
     font-size: 1em;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--gray);
+    box-shadow: 0 0 6px var(--shadow);
     outline: none;
 }
 
@@ -297,9 +299,10 @@ footer {
     color: var(--white);
     padding: 12px 24px;
     border-radius: 6px;
-    text-decoration: none;
+    border: none;
+    text-transform: uppercase;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .footer-actions .btn:hover {
