@@ -1,29 +1,27 @@
 :root {
-    --beige-lightest: #f8f6f1;
-    --beige-light: #ebe5d9;
-    --beige: #d6ceb8;
-    --beige-dark: #c1b496;
-    --gray-light: #e0e0e0;
-    --gray: #888888;
-    --gray-dark: #444444;
-    --white: #ffffff;
-    --black: #1a1a1a;
-    --shadow: rgba(0, 0, 0, 0.1);
-        --accent-color: #c79500; /* Dark mustard yellow */
-
+  --primary-color: #3498db; /* Brighter blue */
+  --accent-color: #f1c40f; /* Darker yellow */
+  --beige-lightest: #f8f6f1;
+  --beige-light: #ebe5d9;
+  --beige: #d6ceb8;
+  --beige-dark: #c1b496;
+  --gray-light: #e0e0e0;
+  --gray: #888888;
+  --gray-dark: #444444;
+  --white: #ffffff;
+  --black: #1a1a1a;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 
-
 body {
-    color: var(--gray-dark);
-    background-color: var(--beige-lightest);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-
+  font-family: 'Open Sans', sans-serif; /* Modern sans-serif font */
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--beige-lightest);
+  color: var(--gray-dark);
 }
 
 /* Header styles */
