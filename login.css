@@ -4,32 +4,44 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: var(--beige-lightest); /* Light beige background */
     color: var(--gray-dark); /* Dark gray text */
+    line-height: 1.6; /* Improved readability */
 }
 
+/* Centering the main content */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     padding: 20px;
+    background: radial-gradient(circle, var(--beige-lightest), var(--beige-light)); /* Subtle gradient */
 }
 
+/* Modernized login container */
 .login-container {
     background-color: var(--white); /* White background for form */
-    border-radius: 12px;
-    padding: 30px;
-    max-width: 400px;
+    border-radius: 16px; /* More rounded corners */
+    padding: 40px; /* Increased padding */
+    max-width: 360px; /* Slightly smaller max-width */
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
     text-align: center;
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
+.login-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Heading styling */
 .login-container h1 {
-    font-size: 1.75rem;
+    font-size: 2rem; /* Larger font size */
     margin-bottom: 20px;
     color: var(--beige-dark); /* Darker beige for heading */
+    font-weight: 700; /* Bolder text */
 }
 
+/* Form group styling */
 .form-group {
     margin-bottom: 20px;
     position: relative;
@@ -37,56 +49,64 @@ main {
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px; /* Increased margin */
     font-weight: 500;
     color: var(--beige-dark);
+    font-size: 0.875rem; /* Smaller font size */
 }
 
+/* Input fields styling */
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 14px; /* Increased padding */
     border: 1px solid var(--gray-light);
-    border-radius: 8px;
-    font-size: 1em;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* More rounded corners */
+    font-size: 1rem; /* Slightly larger font size */
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus {
     border-color: var(--gray);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     outline: none;
 }
 
+/* Button styling */
 button {
-    padding: 12px 20px;
+    padding: 14px 24px; /* Larger padding */
     border: none;
     background-color: var(--accent-color); /* Dark mustard yellow */
     color: var(--white); /* White text */
-    font-size: 1em;
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 12px; /* More rounded corners */
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 10px;
+    margin-top: 15px; /* Increased margin */
+    font-weight: 600; /* Bolder text */
 }
 
 button:hover {
-    background-color: #a06d00; /* Darker mustard on hover */
-    transform: translateY(-2px);
+    background-color: #8c5e00; /* Darker mustard on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
+/* Paragraph styling */
 p {
     margin-top: 20px;
     font-size: 0.875rem;
     color: var(--gray);
 }
 
+/* Link styling */
 a {
     color: var(--accent-color); /* Dark mustard yellow */
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 600; /* Bolder text */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: var(--gray-dark); /* Subtle color change on hover */
 }
