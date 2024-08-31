@@ -1,27 +1,30 @@
 /* Root Variables */
 :root {
-    --beige-lightest: #fdf7ec;
-    --beige-light: #f7e4c9;
-    --beige-dark: #d4a35a;
-    --gray-dark: #4b4b4b;
-    --gray-light: #d1d1d1;
-    --gray: #7a7a7a;
-    --white: #ffffff;
     --primary-color: #2ecc71; /* Green */
-    --primary-dark: #27ae60; /* Darker green */
-    --accent-color: #c79500; /* Dark mustard yellow */
+    --primary-dark: #27ae60; /* Darker shade of primary */
+    --accent-color: #f39c12; /* Orange for accents */
+    --beige-lightest: #f8f6f1; /* Very light beige */
+    --beige-light: #e3f2e1; /* Light beige with a hint of green */
+    --beige: #c8e6c9; /* Soft beige-green */
+    --beige-dark: #a5d6a7; /* Darker beige with green tint */
+    --gray-light: #e0e0e0; /* Light gray */
+    --gray: #888888; /* Gray */
+    --gray-dark: #444444; /* Dark gray */
+    --white: #ffffff; /* White */
+    --black: #1a1a1a; /* Almost black */
+    --shadow: rgba(0, 0, 0, 0.1); /* Shadow color */
     --border-radius: 10px; /* Uniform border radius for rounded elements */
-    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light box shadow */
-    --box-shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker box shadow */
+    --box-shadow-light: 0 4px 12px var(--shadow); /* Light box shadow */
+    --box-shadow-dark: 0 6px 20px var(--shadow); /* Darker box shadow */
     --transition-speed: 0.3s; /* Smooth transition speed */
 }
-
 /* Basic Reset */
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background: url('foodwaste.jpg') no-repeat center center fixed; /* Background image */
-    background-size: cover;
+        background-color: var(--beige-lightest); /* Fallback background color */
+
     color: var(--gray-dark); /* Dark gray text */
 }
 
@@ -52,12 +55,11 @@ header h2 {
 }
 
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: var(--white); /* White background for form */
-    border-radius: var(--border-radius); /* Rounded corners */
-    box-shadow: var(--box-shadow-dark); /* Darker box shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
 .contact-us {
