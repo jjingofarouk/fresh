@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
-
 </head>
 <body>
-
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="logo">
@@ -68,16 +66,46 @@
             </section>
             <section id="settings">
                 <h2>Settings</h2>
-                <!-- Settings form or content -->
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="User123">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="user@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <button type="submit">Save Changes</button>
+                </form>
             </section>
             <section id="profile">
                 <h2>Profile</h2>
-                <!-- Profile details -->
+                <div class="profile-info">
+                    <div class="form-group">
+                        <label for="profilePic">Profile Picture:</label>
+                        <input type="file" id="profilePic" name="profilePic">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio:</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Write something about yourself..."></textarea>
+                    </div>
+                    <button type="button" onclick="updateProfile()">Update Profile</button>
+                </div>
             </section>
         </main>
     </div>
     <div id="foodWasteCount" class="count"></div>
 
     <script src="dashboard.js"></script>
+    <script>
+        function updateProfile() {
+            // Add functionality to handle profile updates
+            alert('Profile updated successfully!');
+        }
+    </script>
 </body>
 </html>
