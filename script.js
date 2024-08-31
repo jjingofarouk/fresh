@@ -13,6 +13,12 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         smoothScroll(this.getAttribute('href'));
+
+        // Close the navigation menu after clicking a link (for mobile view)
+        const navLinks = document.getElementById('nav-links');
+        if (navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
+        }
     });
 });
 
@@ -27,6 +33,12 @@ document.querySelectorAll('h2').forEach(heading => {
             sectionContent.setAttribute('aria-expanded', sectionContent.classList.contains('hidden') ? 'false' : 'true');
         }
     });
+});
+
+// Toggle navigation menu on mobile view
+document.getElementById('menu-icon').addEventListener('click', function () {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
 });
 
 // Debounced scroll event for updating the active link
