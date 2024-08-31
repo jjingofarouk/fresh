@@ -28,7 +28,7 @@ body {
 /* Header styles */
 header {
   background-color: var(--beige-dark);
-  padding: 0.5rem 1rem 1rem; /* Reduce only top padding */
+  padding: 0.5rem 1rem 1rem;
   position: sticky;
   top: 0;
   margin-top: 0;
@@ -44,9 +44,7 @@ header {
   align-items: center;
   background-color: var(--beige-dark);
   padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  width: 100%;
 }
 
 /* Styling for the logo */
@@ -55,6 +53,7 @@ header {
   height: auto; /* Maintain aspect ratio */
   width: auto; /* Maintain aspect ratio */
 }
+
 /* Additional styling to ensure logos are consistently aligned */
 .header-logo-left {
   margin-right: 1rem; /* Space between logos if needed */
@@ -62,8 +61,9 @@ header {
 
 .header-logo-right {
   margin-left: 1rem; /* Space between logos if needed */
+}
 
-/* Hide the navigation links on smaller screens */
+/* Styling for the navigation links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -94,9 +94,10 @@ header {
   max-height: 50px; /* Match the max-height of the logo */
   height: auto; /* Maintain aspect ratio */
   width: auto; /* Maintain aspect ratio */
-  padding: 0; /* Remove any default padding */
-  border: none; /* Remove any default border */
-  background: none; /* Remove any background */
+  padding: 0;
+  border: none;
+  background: none;
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -118,7 +119,6 @@ header {
     display: block; /* Show the menu icon on smaller screens */
   }
 }
-
 
 /* Header Spacing */
 h1, h2, h3, h4, h5, h6 {
