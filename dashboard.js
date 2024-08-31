@@ -161,3 +161,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Additional functionalities like fetching dynamic data can be added here
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Example of dynamic chart initialization for Food Waste with custom number counting
+    const ctxWaste = document.getElementById('wasteChart').getContext('2d');
+    new Chart(ctxWaste, {
+        type: 'bar',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May'],
+            datasets: [{
+                label: 'Food Waste',
+                data: [10, 15, 20, 25, 30],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            animation: {
+                duration: 2000, // 2 seconds
+                easing: 'easeOutBounce'
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.dataset.label}: ${context.raw} kg`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Custom number counting for Food Waste
+    const foodWasteCount = new CountUp('foodWasteCount', 0, 5000, 0, 2.5, { 
+        startVal: 0,
+        decimalPlaces: 0,
+        duration: 2.5,
+        useEasing: true,
+        useGrouping: true
+    });
+
+    foodWasteCount.start();
+});
+
