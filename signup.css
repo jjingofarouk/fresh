@@ -1,35 +1,32 @@
+/* Root Variables */
 :root {
-    --beige-lightest: #f8f6f1;
-    --beige-light: #ebe5d9;
-    --beige: #d6ceb8;
-    --beige-dark: #c1b496;
-    --gray-light: #e0e0e0;
-    --gray: #888888;
-    --gray-dark: #444444;
+    --beige-lightest: #fdf7ec;
+    --beige-light: #f7e4c9;
+    --beige-dark: #d4a35a;
+    --gray-dark: #4b4b4b;
+    --gray-light: #d1d1d1;
+    --gray: #7a7a7a;
     --white: #ffffff;
-    --black: #1a1a1a;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --accent-color: #b38600; /* Dark mustard yellow */
-    --primary-color: #333; /* Dark gray for text */
-    --footer-bg: #f1f1f1; /* Light gray for footer background */
-    --footer-text: #666; /* Dark gray for footer text */
+    --accent-color: #c79500; /* Dark mustard yellow */
+    --border-radius: 10px; /* Uniform border radius for rounded elements */
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light box shadow */
+    --box-shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker box shadow */
+    --transition-speed: 0.3s; /* Smooth transition speed */
 }
 
+/* Basic Reset */
 body {
-    color: var(--gray-dark);
-    background-color: var(--beige-lightest);
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Apple-like font */
-    font-size: 16px;
-    line-height: 1.6;
     margin: 0;
-    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: url('foodwaste.jpg') no-repeat center center fixed; /* Background image */
+    color: var(--gray-dark); /* Dark gray text */
 }
 
 header {
-    background-color: var(--beige-light);
+    background-color: var(--beige-light); /* Header background color */
     padding: 20px;
-    box-shadow: 0 1px 3px var(--shadow);
-    color: var(--black);
+    box-shadow: 0 1px 3px var(--box-shadow-light); /* Light box shadow */
+    color: var(--gray-dark); /* Dark gray text */
     text-align: center;
     border-bottom: 1px solid var(--gray-light);
 }
@@ -42,6 +39,7 @@ header h1, header h2 {
 header h1 {
     font-size: 2.25rem;
     font-weight: 700;
+    color: var(--beige-dark); /* Darker beige for heading */
 }
 
 header h2 {
@@ -54,9 +52,9 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 30px;
-    background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 3px 6px var(--shadow);
+    background-color: var(--white); /* White background for form */
+    border-radius: var(--border-radius); /* Rounded corners */
+    box-shadow: var(--box-shadow-dark); /* Darker box shadow */
 }
 
 .contact-us {
@@ -69,7 +67,7 @@ main {
     font-size: 2.25rem;
     margin-bottom: 20px;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Dark mustard yellow */
 }
 
 .contact-us .form-group {
@@ -88,32 +86,32 @@ main {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--gray-light);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .contact-us .form-group input:focus,
 .contact-us .form-group textarea:focus {
     border-color: var(--gray);
-    box-shadow: 0 0 6px var(--shadow);
+    box-shadow: 0 0 6px var(--box-shadow-light);
     outline: none;
 }
 
 .contact-us button {
-    background-color: var(--accent-color);
-    color: var(--white);
+    background-color: var(--accent-color); /* Dark mustard yellow */
+    color: var(--white); /* White text */
     padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: var(--border-radius); /* Rounded corners */
     border: none;
     font-weight: 600;
     text-transform: uppercase;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .contact-us button:hover {
     background-color: #a06d00; /* Darker mustard on hover */
-    box-shadow: 0 5px 10px var(--shadow);
+    box-shadow: 0 5px 10px var(--box-shadow-light);
 }
 
 form {
@@ -128,7 +126,7 @@ form {
 form legend {
     font-size: 1.5rem;
     margin-bottom: 12px;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Dark mustard yellow */
 }
 
 .form-group {
@@ -138,7 +136,7 @@ form legend {
 .form-group label {
     display: block;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Dark mustard yellow */
     margin-bottom: 8px;
 }
 
@@ -147,15 +145,15 @@ form legend {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--gray-light);
-    border-radius: 8px;
+    border-radius: var(--border-radius); /* Rounded corners */
     font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--gray);
-    box-shadow: 0 0 6px var(--shadow);
+    box-shadow: 0 0 6px var(--box-shadow-light);
     outline: none;
 }
 
@@ -203,11 +201,11 @@ form legend {
 }
 
 footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
+    background-color: var(--beige-light); /* Light beige for footer background */
+    color: var(--gray-dark); /* Dark gray text */
     padding: 30px;
     font-size: 0.875em;
-    box-shadow: 0 -3px 6px var(--shadow);
+    box-shadow: 0 -3px 6px var(--box-shadow-light); /* Light box shadow */
     text-align: center;
 }
 
@@ -222,7 +220,7 @@ footer {
 
 .contact-section h2 {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Dark mustard yellow */
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -241,11 +239,11 @@ footer {
 
 .contact-list li svg {
     margin-right: 12px;
-    fill: var(--primary-color);
+    fill: var(--accent-color); /* Dark mustard yellow */
 }
 
 .contact-list a {
-    color: var(--primary-color);
+    color: var(--accent-color); /* Dark mustard yellow */
     text-decoration: none;
     font-weight: 500;
 }
@@ -271,17 +269,17 @@ footer {
 }
 
 .social-list a {
-    color: var(--primary-color);
+    color: var(--accent-color); /* Dark mustard yellow */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 28px;
     height: 28px;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed);
 }
 
 .social-list a:hover {
-    color: var(--accent-color);
+    color: #a06d00; /* Darker mustard on hover */
 }
 
 .social-list svg {
@@ -295,14 +293,14 @@ footer {
 }
 
 .footer-actions .btn {
-    background-color: var(--accent-color);
-    color: var(--white);
+    background-color: var(--accent-color); /* Dark mustard yellow */
+    color: var(--white); /* White text */
     padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: var(--border-radius); /* Rounded corners */
     border: none;
     text-transform: uppercase;
     font-weight: 600;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .footer-actions .btn:hover {
@@ -346,6 +344,6 @@ footer {
     }
 
     .social-list li {
-        margin-bottom: 10px;
+        margin: 10px 0;
     }
 }
