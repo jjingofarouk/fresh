@@ -1,14 +1,15 @@
 /* Color Variables */
 :root {
-    --beige-light: #F5F5DC;
-    --beige-dark: #E5D3B3;
-    --gray-light: #D3D3D3;
-    --gray-dark: #4A4A4A;
-    --black: #2C2C2C;
-    --white: #FFFFFF;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --primary-color: #8B4513;
-    --primary-dark: #6B3E0A;
+    --beige-light: #F5F5DC; /* Lighter beige */
+    --beige-dark: #E5D3B3; /* Darker beige */
+    --gray-light: #D3D3D3; /* Light gray */
+    --gray-dark: #4A4A4A; /* Dark gray */
+    --black: #2C2C2C; /* Black */
+    --white: #FFFFFF; /* White */
+    --shadow: rgba(0, 0, 0, 0.1); /* Shadow */
+    --primary-color: #2ecc71; /* Green */
+    --primary-dark: #27ae60; /* Darker green */
+    --accent-color: #c79500; /* Dark mustard yellow */
 }
 
 /* General Styles */
