@@ -1,16 +1,15 @@
-/* dashboard.css */
 /* Root Variables */
 :root {
-    --primary-color: #4CAF50; /* Natural, earthy green */
-    --primary-dark: #45a049; /* Darker shade of primary */
-    --accent-color: #66BB6A; /* Lighter, fresher green for accents */
-    --beige-lightest: #f9fbf2; /* Very light beige */
-    --beige-light: #f0f4e3; /* Light beige with a hint of green */
-    --beige: #e0e8d4; /* Soft beige-green */
-    --beige-dark: #c1cfa9; /* Darker beige with green tint */
+    --primary-color: #2ecc71; /* Green */
+    --primary-dark: #27ae60; /* Darker shade of primary */
+    --accent-color: #f39c12; /* Orange for accents */
+    --beige-lightest: #f8f6f1; /* Very light beige */
+    --beige-light: #e3f2e1; /* Light beige with a hint of green */
+    --beige: #c8e6c9; /* Soft beige-green */
+    --beige-dark: #a5d6a7; /* Darker beige with green tint */
     --gray-light: #e0e0e0; /* Light gray */
-    --gray: #7f8c8d; /* Gray */
-    --gray-dark: #34495e; /* Dark gray */
+    --gray: #888888; /* Gray */
+    --gray-dark: #444444; /* Dark gray */
     --white: #ffffff; /* White */
     --black: #1a1a1a; /* Almost black */
     --shadow: rgba(0, 0, 0, 0.1); /* Shadow color */
