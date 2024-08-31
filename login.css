@@ -109,6 +109,7 @@ a:hover {
 }
 
 /* Social Login Buttons */
+/* Social Login Buttons */
 .social-login {
     margin-top: 20px;
 }
@@ -119,15 +120,26 @@ a:hover {
 
 .social-button {
     display: inline-block;
-    padding: 10px 15px;
+    width: 40px; /* Adjust size of the buttons */
+    height: 40px;
     border-radius: var(--border-radius);
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
     margin: 0 5px;
     transition: background-color var(--transition-speed);
+    overflow: hidden; /* Ensure logos fit within button */
 }
 
+.social-button img {
+    width: 100%; /* Scale image to fit button */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: transform var(--transition-speed);
+}
+
+.social-button:hover img {
+    transform: scale(1.05); /* Slightly enlarge logo on hover */
+}
+
+/* Google Button */
 .social-button.google {
     background-color: #4285F4; /* Google blue */
 }
@@ -136,12 +148,42 @@ a:hover {
     background-color: #357AE8;
 }
 
+/* Facebook Button */
 .social-button.facebook {
     background-color: #3B5998; /* Facebook blue */
 }
 
 .social-button.facebook:hover {
     background-color: #2D4373;
+}
+
+/* Twitter Button */
+.social-button.X {
+    background-color: #1DA1F2; /* Twitter blue */
+}
+
+.social-button.x:hover {
+    background-color: #0d95e8;
+}
+
+/* LinkedIn Button */
+.social-button.linkedin {
+    background-color: #0077B5; /* LinkedIn blue */
+}
+
+.social-button.linkedin:hover {
+    background-color: #005582;
+}
+
+/* GitHub Button */
+.social-button.github {
+    background-color: #333; /* GitHub black */
+}
+
+.social-button.github:hover {
+    background-color: #222;
+}
+
 }
 
 /* Remember Me Checkbox */
