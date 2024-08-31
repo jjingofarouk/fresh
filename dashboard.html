@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshKeep Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="freshkeep.jpg" alt="FreshKeep Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#analytics">Analytics</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Dashboard</h1>
+                <div class="profile">
+                    <img src="user-avatar.jpg" alt="User Avatar">
+                    <span>Welcome, User</span>
+                </div>
+            </header>
+            <section id="overview">
+                <h2>Overview</h2>
+                <div class="card">
+                    <h3>Total Food Waste</h3>
+                    <p>5,000 kg</p>
+                </div>
+                <div class="card">
+                    <h3>Active Users</h3>
+                    <p>1,200</p>
+                </div>
+            </section>
+            <section id="analytics">
+                <h2>Analytics</h2>
+                <div class="chart-container">
+                    <!-- Example chart placeholder -->
+                    <canvas id="wasteChart"></canvas>
+                </div>
+            </section>
+            <section id="settings">
+                <h2>Settings</h2>
+                <!-- Settings form or content -->
+            </section>
+            <section id="profile">
+                <h2>Profile</h2>
+                <!-- Profile details -->
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
