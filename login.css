@@ -18,7 +18,7 @@
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--beige-light); /* Light beige background */
+    background: url('foodwaste.jpg') no-repeat center center fixed; /* Background image */
     color: var(--gray-dark); /* Dark gray text */
 }
 
