@@ -112,32 +112,32 @@ a:hover {
 /* Social Login Buttons */
 .social-login {
     margin-top: 20px;
+    display: flex; /* Use flexbox to arrange items horizontally */
+    justify-content: center; /* Center align buttons */
+    gap: 10px; /* Space between buttons */
 }
 
 .social-login p {
     margin-bottom: 10px;
+    font-size: 1rem; /* Adjust font size for the text */
+    color: var(--gray-dark);
 }
 
 .social-button {
-    display: inline-block;
-    padding: 5px; /* Reduce padding for smaller buttons */
-    border-radius: 8px;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 50px; /* Standard width */
+    height: 50px; /* Standard height */
+    border-radius: var(--border-radius);
     color: var(--white);
     text-decoration: none;
-    font-weight: 600;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
-    width: 40px; /* Set a fixed width */
-    height: 40px; /* Set a fixed height */
-    overflow: hidden;
-    text-align: center;
-    line-height: 40px; /* Center align text/icons */
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 .social-button img {
-    width: 24px; /* Adjust size of the logo images */
-    height: 24px;
-    vertical-align: middle; /* Center align images */
+    width: 30px; /* Size of the logo images */
+    height: 30px;
 }
 
 /* Specific styles for each social button */
