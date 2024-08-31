@@ -6,7 +6,6 @@
     <title>FreshKeep Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 <body>
 
@@ -34,20 +33,35 @@
             </header>
             <section id="overview">
                 <h2>Overview</h2>
-                <div class="card">
-                    <h3>Total Food Waste</h3>
-                    <p>5,000 kg</p>
-                </div>
-                <div class="card">
-                    <h3>Active Users</h3>
-                    <p>1,200</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Total Food Waste</h3>
+                        <p>5,000 kg</p>
+                    </div>
+                    <div class="card">
+                        <h3>Active Users</h3>
+                        <p>1,200</p>
+                    </div>
+                    <div class="card">
+                        <h3>Food Donations</h3>
+                        <p>300 kg</p>
+                    </div>
+                    <div class="card">
+                        <h3>CO2 Saved</h3>
+                        <p>1,500 kg</p>
+                    </div>
                 </div>
             </section>
             <section id="analytics">
                 <h2>Analytics</h2>
                 <div class="chart-container">
-                    <!-- Example chart placeholder -->
                     <canvas id="wasteChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="donationsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="co2Chart"></canvas>
                 </div>
             </section>
             <section id="settings">
