@@ -52,7 +52,16 @@ header {
 /* Styling for the logo */
 .logo img {
   max-height: 50px;
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Maintain aspect ratio */
 }
+/* Additional styling to ensure logos are consistently aligned */
+.header-logo-left {
+  margin-right: 1rem; /* Space between logos if needed */
+}
+
+.header-logo-right {
+  margin-left: 1rem; /* Space between logos if needed */
 
 /* Hide the navigation links on smaller screens */
 .nav-links {
