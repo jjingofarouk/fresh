@@ -120,26 +120,27 @@ a:hover {
 
 .social-button {
     display: inline-block;
-    width: 40px; /* Adjust size of the buttons */
-    height: 40px;
-    border-radius: var(--border-radius);
+    padding: 5px; /* Reduce padding for smaller buttons */
+    border-radius: 8px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
     margin: 0 5px;
-    transition: background-color var(--transition-speed);
-    overflow: hidden; /* Ensure logos fit within button */
+    transition: background-color 0.3s ease;
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px; /* Center align text/icons */
 }
 
 .social-button img {
-    width: 100%; /* Scale image to fit button */
-    height: 100%;
-    object-fit: cover; /* Maintain aspect ratio */
-    transition: transform var(--transition-speed);
+    width: 24px; /* Adjust size of the logo images */
+    height: 24px;
+    vertical-align: middle; /* Center align images */
 }
 
-.social-button:hover img {
-    transform: scale(1.05); /* Slightly enlarge logo on hover */
-}
-
-/* Google Button */
+/* Specific styles for each social button */
 .social-button.google {
     background-color: #4285F4; /* Google blue */
 }
@@ -148,7 +149,6 @@ a:hover {
     background-color: #357AE8;
 }
 
-/* Facebook Button */
 .social-button.facebook {
     background-color: #3B5998; /* Facebook blue */
 }
@@ -157,16 +157,14 @@ a:hover {
     background-color: #2D4373;
 }
 
-/* Twitter Button */
-.social-button.X {
+.social-button.twitter {
     background-color: #1DA1F2; /* Twitter blue */
 }
 
-.social-button.x:hover {
-    background-color: #0d95e8;
+.social-button.twitter:hover {
+    background-color: #1A91DA;
 }
 
-/* LinkedIn Button */
 .social-button.linkedin {
     background-color: #0077B5; /* LinkedIn blue */
 }
@@ -175,13 +173,12 @@ a:hover {
     background-color: #005582;
 }
 
-/* GitHub Button */
 .social-button.github {
-    background-color: #333; /* GitHub black */
+    background-color: #333; /* GitHub dark gray */
 }
 
 .social-button.github:hover {
-    background-color: #222;
+    background-color: #1D1D1D;
 }
 
 }
