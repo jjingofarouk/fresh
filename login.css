@@ -144,6 +144,8 @@ a:hover {
     color: var(--white); /* White text */
     text-decoration: none;
     transition: background-color var(--transition-speed), transform var(--transition-speed);
+        padding: 0; /* Remove padding */
+
 }
 
 .social-button img {
