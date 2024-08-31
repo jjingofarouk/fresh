@@ -215,7 +215,7 @@ footer {
   background-color: var(--beige-dark);
   color: var(--white);
   text-align: center;
-  padding: 0;
+  padding: 1rem 0;
   box-shadow: 0 -4px 15px var(--shadow);
   width: 100%;
   position: relative;
@@ -223,42 +223,18 @@ footer {
 }
 
 .footer-content {
-  background-color: #f1f1f1;
-  color: #666;
+  color: var(--white);
   text-align: center;
   padding: 20px;
-  box-shadow: 0 -2px 10px var(--shadow);
-  width: 100%;
   box-sizing: border-box;
 }
 
 .footer-content p {
-  margin-bottom: 10px;
-}
-
-.footer-content .btn-signup {
-  background-color: #c79500;
-  color: var(--white);
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-align: center;
-  display: inline-block;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.footer-content .btn-signup:hover {
-  background-color: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-.footer-content .btn-signup:focus {
-  outline: 2px solid var(--primary-color);
+  margin-bottom: 15px;
 }
 
 .footer-links {
-  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .footer-links ul {
@@ -266,11 +242,11 @@ footer {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .footer-links li {
-  margin: 10px 20px;
+  margin: 0;
 }
 
 .footer-links a {
@@ -283,6 +259,27 @@ footer {
 .footer-links a:hover {
   color: var(--accent-color);
   transform: translateY(-2px);
+}
+
+.btn-signup {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-signup:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-signup:focus {
+  outline: 2px solid var(--primary-color);
 }
 
 /* Responsive Design Adjustments */
