@@ -91,10 +91,12 @@ header {
 .menu-icon {
   display: none;
   cursor: pointer;
- max-height: 50px;
+  max-height: 50px; /* Match the max-height of the logo */
   height: auto; /* Maintain aspect ratio */
   width: auto; /* Maintain aspect ratio */
-}
+  padding: 0; /* Remove any default padding */
+  border: none; /* Remove any default border */
+  background: none; /* Remove any background */
 
 /* Responsive Styles */
 @media (max-width: 768px) {
