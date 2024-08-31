@@ -1,18 +1,19 @@
 /* Root Variables */
 :root {
   --primary-color: #2ecc71; /* Green */
-  --primary-dark: #27ae60;
+  --primary-dark: #27ae60; /* Darker green */
   --accent-color: #f39c12; /* Orange */
-  --beige-lightest: #f8f6f1;
-  --beige-light: #e3f2e1;
-  --beige: #c8e6c9;
-  --beige-dark: #a5d6a7;
-  --gray-light: #e0e0e0;
-  --gray: #888888;
-  --gray-dark: #444444;
-  --white: #ffffff;
-  --black: #1a1a1a;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --beige-lightest: #f8f6f1; /* Light beige */
+  --beige-light: #e3f2e1; /* Light beige-green */
+  --beige: #c8e6c9; /* Beige-green */
+  --beige-dark: #a5d6a7; /* Darker beige-green */
+  --gray-lightest: #f5f5f5; /* Very light gray */
+  --gray-light: #e0e0e0; /* Light gray */
+  --gray: #888888; /* Medium gray */
+  --gray-dark: #444444; /* Dark gray */
+  --white: #ffffff; /* White */
+  --black: #1a1a1a; /* Black */
+  --shadow: rgba(0, 0, 0, 0.1); /* Shadow */
 }
 
 /* General Body Styles */
