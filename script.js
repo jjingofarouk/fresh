@@ -60,18 +60,19 @@ const observerCallback = (entries) => {
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 document.querySelectorAll('section').forEach(section => observer.observe(section));
 
-// Optional: Light/Dark mode toggle with localStorage persistence
+// Light/Dark mode toggle with localStorage persistence
 const toggleButton = document.createElement('button');
 toggleButton.textContent = localStorage.getItem('darkMode') === 'true' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
 toggleButton.style.position = 'fixed';
 toggleButton.style.bottom = '20px';
 toggleButton.style.right = '20px';
 toggleButton.style.padding = '10px 15px';
-toggleButton.style.backgroundColor = 'var(--gray-dark)';
+toggleButton.style.backgroundColor = 'var(--primary-color)';
 toggleButton.style.color = 'var(--white)';
 toggleButton.style.border = 'none';
 toggleButton.style.borderRadius = '5px';
 toggleButton.style.cursor = 'pointer';
+toggleButton.style.zIndex = '1000';
 
 document.body.appendChild(toggleButton);
 
@@ -89,13 +90,7 @@ const darkModeStyles = `
     }
     body.dark-mode header, 
     body.dark-mode footer, 
-    body.dark-mode .area, 
-    body.dark-mode .values, 
-    body.dark-mode .reach, 
-    body.dark-mode .relevance, 
-    body.dark-mode .solution, 
-    body.dark-mode .innovation, 
-    body.dark-mode .progress {
+    body.dark-mode .section {
         background-color: var(--gray);
         color: var(--white);
     }
@@ -104,7 +99,7 @@ const darkModeStyles = `
     }
     body.dark-mode nav ul li a.active,
     body.dark-mode nav ul li a:hover {
-        color: var(--beige-lightest);
+        color: var(--accent-color);
     }
 `;
 
@@ -121,3 +116,212 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.textContent = 'Switch to Light Mode';
     }
 });
+
+// Form validation
+const form = document.querySelector('form');
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        const nameInput = form.querySelector('input[name="name"]');
+        const emailInput = form.querySelector('input[name="email"]');
+        const messageInput = form.querySelector('textarea[name="message"]');
+
+        if (!nameInput.value.trim()) {
+            isValid = false;
+            showError(nameInput, 'Name is required');
+        } else {
+            clearError(nameInput);
+        }
+
+        if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+            isValid = false;
+            showError(emailInput, 'Valid email is required');
+        } else {
+            clearError(emailInput);
+        }
+
+        if (!messageInput.value.trim()) {
+            isValid = false;
+            showError(messageInput, 'Message is required');
+        } else {
+            clearError(messageInput);
+        }
+
+        if (isValid) {
+            // Submit the form or show success message
+            showSuccessMessage(form, 'Form submitted successfully!');
+        }
+    });
+}
+
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function showError(input, message) {
+    const errorElement = input.nextElementSibling || document.createElement('span');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    if (!input.nextElementSibling) {
+        input.parentNode.insertBefore(errorElement, input.nextSibling);
+    }
+    input.classList.add('error');
+}
+
+function clearError(input) {
+    const errorElement = input.nextElementSibling;
+    if (errorElement && errorElement.className === 'error-message') {
+        errorElement.remove();
+    }
+    input.classList.remove('error');
+}
+
+function showSuccessMessage(form, message) {
+    const successElement = document.createElement('div');
+    successElement.className = 'success-message';
+    successElement.textContent = message;
+    form.appendChild(successElement);
+    setTimeout(() => successElement.remove(), 3000);
+}
+
+// Dynamic content loading
+function loadContent(url, targetElement) {
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            targetElement.innerHTML = html;
+        })
+        .catch(error => console.error('Error loading content:', error));
+}
+
+// Example usage: loadContent('about-us.html', document.getElementById('about-section'));
+
+// Search functionality
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+if (searchInput && searchResults) {
+    searchInput.addEventListener('input', debounce(() => {
+        const query = searchInput.value.toLowerCase();
+        const sections = document.querySelectorAll('section');
+        const matches = [];
+
+        sections.forEach(section => {
+            const text = section.textContent.toLowerCase();
+            if (text.includes(query)) {
+                matches.push({
+                    title: section.querySelector('h2').textContent,
+                    id: section.id
+                });
+            }
+        });
+
+        displaySearchResults(matches);
+    }, 300));
+}
+
+function debounce(func, delay) {
+    let timeout;
+    return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), delay);
+    };
+}
+
+function displaySearchResults(results) {
+    searchResults.innerHTML = '';
+    if (results.length === 0) {
+        searchResults.innerHTML = '<p>No results found</p>';
+    } else {
+        const ul = document.createElement('ul');
+        results.forEach(result => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${result.id}`;
+            a.textContent = result.title;
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                smoothScroll(`#${result.id}`);
+                searchResults.innerHTML = '';
+                searchInput.value = '';
+            });
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+        searchResults.appendChild(ul);
+    }
+}
+
+// Lazy loading images
+const lazyImages = document.querySelectorAll('img[data-src]');
+const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            observer.unobserve(img);
+        }
+    });
+});
+
+lazyImages.forEach(img => lazyLoadObserver.observe(img));
+
+// Add a back-to-top button
+const backToTopButton = document.createElement('button');
+backToTopButton.textContent = '↑';
+backToTopButton.style.position = 'fixed';
+backToTopButton.style.bottom = '20px';
+backToTopButton.style.left = '20px';
+backToTopButton.style.padding = '10px 15px';
+backToTopButton.style.backgroundColor = 'var(--primary-color)';
+backToTopButton.style.color = 'var(--white)';
+backToTopButton.style.border = 'none';
+backToTopButton.style.borderRadius = '50%';
+backToTopButton.style.cursor = 'pointer';
+backToTopButton.style.display = 'none';
+backToTopButton.style.zIndex = '1000';
+
+document.body.appendChild(backToTopButton);
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Add a simple animation to section entrances
+const animateSections = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => {
+    animateSections.observe(section);
+});
+
+// Add this CSS to your stylesheet
+const animationStyles = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+`;
+
+styleSheet.innerText += animationStyles;
