@@ -1,38 +1,43 @@
 /* dashboard.css */
-
 /* Root Variables */
 :root {
-    --beige-lightest: #fdf7ec;
-    --beige-light: #f7e4c9;
-    --beige-dark: #d4a35a;
-    --gray-dark: #4b4b4b;
-    --gray-light: #d1d1d1;
-    --gray: #7a7a7a;
-    --white: #ffffff;
-    --accent-color: #c79500; /* Dark mustard yellow */
-    --border-radius: 10px; /* Uniform border radius for rounded elements */
-    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light box shadow */
-    --box-shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker box shadow */
+    --primary-color: #4CAF50; /* Natural, earthy green */
+    --primary-dark: #45a049; /* Darker shade of primary */
+    --accent-color: #66BB6A; /* Lighter, fresher green for accents */
+    --beige-lightest: #f9fbf2; /* Very light beige */
+    --beige-light: #f0f4e3; /* Light beige with a hint of green */
+    --beige: #e0e8d4; /* Soft beige-green */
+    --beige-dark: #c1cfa9; /* Darker beige with green tint */
+    --gray-light: #e0e0e0; /* Light gray */
+    --gray: #7f8c8d; /* Gray */
+    --gray-dark: #34495e; /* Dark gray */
+    --white: #ffffff; /* White */
+    --black: #1a1a1a; /* Almost black */
+    --shadow: rgba(0, 0, 0, 0.1); /* Shadow color */
+    --border-radius: 8px; /* Uniform border radius for rounded elements */
+    --box-shadow-light: 0 4px 6px var(--shadow); /* Light box shadow */
+    --box-shadow-dark: 0 6px 12px var(--shadow); /* Darker box shadow */
     --transition-speed: 0.3s; /* Smooth transition speed */
 }
 
 /* Basic Reset */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--beige-lightest); /* Lightest beige background */
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto for consistency */
+    background-color: var(--beige-lightest);
+    color: var(--gray-dark);
 }
 
 /* Dashboard Container */
 .dashboard-container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Sidebar */
 .sidebar {
     width: 250px;
-    background-color: var(--beige-dark); /* Dark beige for sidebar */
+    background-color: var(--primary-color);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -65,14 +70,14 @@ body {
 }
 
 .sidebar nav ul li a:hover {
-    background-color: var(--beige-light); /* Light beige on hover */
+    background-color: var(--primary-dark);
 }
 
 /* Main Content */
 .main-content {
     flex: 1;
     padding: 20px;
-    background-color: var(--beige-lightest); /* Lightest beige for main content */
+    background-color: var(--beige-lightest);
 }
 
 /* Header */
@@ -81,13 +86,16 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: var(--white);
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--gray-light);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    margin-bottom: 20px;
 }
 
 .header h1 {
     margin: 0;
-    color: var(--beige-dark); /* Dark beige for header text */
+    color: var(--primary-dark);
+    font-family: 'Montserrat', sans-serif; /* Changed to Montserrat for headers */
 }
 
 /* Profile */
@@ -107,7 +115,7 @@ body {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 20px;
 }
 
@@ -118,28 +126,51 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow-light);
     text-align: center;
+    transition: box-shadow var(--transition-speed);
+}
+
+.card:hover {
+    box-shadow: var(--box-shadow-dark);
 }
 
 .card h3 {
-    margin: 0;
+    margin: 0 0 10px;
     font-size: 1.25rem;
-    color: var(--beige-dark); /* Dark beige for card headings */
+    color: var(--primary-dark);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card p {
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
-    color: var(--gray-dark); /* Dark gray for card text */
+    color: var(--accent-color);
 }
 
 /* Chart Container */
 .chart-container {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
     margin-top: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+
+    .main-content {
+        order: 1;
+    }
+
     .card-grid {
         grid-template-columns: 1fr;
     }
