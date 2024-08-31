@@ -21,6 +21,7 @@ body {
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background: url('foodwaste.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover;
     color: var(--gray-dark); /* Dark gray text */
 }
 
@@ -103,19 +104,22 @@ main {
 .contact-us button {
     background-color: var(--primary-color); /* Green button */
     color: var(--white); /* White text */
-    padding: 12px 24px;
+    padding: 14px 28px; /* Increased padding for better appearance */
     border-radius: var(--border-radius); /* Rounded corners */
     border: none;
-    font-weight: 600;
+    font-weight: 700; /* Bolder text */
     text-transform: uppercase;
+    letter-spacing: 1px; /* Slight letter spacing for better readability */
+    cursor: pointer;
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .contact-us button:hover {
     background-color: var(--primary-dark); /* Darker green on hover */
-    box-shadow: 0 5px 10px var(--box-shadow-light);
+    box-shadow: 0 6px 12px var(--box-shadow-light); /* Enhanced box shadow */
 }
 
+/* Form Section Styles */
 form {
     display: flex;
     flex-direction: column;
