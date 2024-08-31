@@ -39,14 +39,10 @@ header {
 
 /* General styling for the navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
   background-color: var(--beige-dark);
   padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  text-align: right;
 }
 
 /* Styling for the logo */
@@ -65,15 +61,15 @@ header {
 
 /* Hide the navigation links on smaller screens */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
+   list-style: none;
   padding: 0;
+  margin: 0;
+  display: none; /* Hide the links by default */
+  text-align: center;
 }
 
 .nav-links li {
-  margin: 0;
+  margin: 10px 0;
 }
 
 .nav-links a {
@@ -85,6 +81,9 @@ header {
 
 .nav-links a:hover {
   color: var(--accent-color);
+}
+ .nav-links.show {
+  display: block;
 }
 
 /* Menu icon styling for mobile view */
