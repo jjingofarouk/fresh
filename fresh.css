@@ -91,6 +91,9 @@ header {
 .menu-icon {
   display: none;
   cursor: pointer;
+ max-height: 50px;
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Maintain aspect ratio */
 }
 
 /* Responsive Styles */
