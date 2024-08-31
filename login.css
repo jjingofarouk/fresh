@@ -14,7 +14,7 @@
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--beige-lightest); /* Light beige background */
+    background-color: #f7e4c9; /* Light beige background */
     color: var(--gray-dark); /* Dark gray text */
 }
 
