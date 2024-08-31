@@ -2,40 +2,46 @@
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--beige-lightest); /* Light beige background */
-    color: var(--gray-dark); /* Dark gray text */
+    background-color: #f4f7f6; /* Light gray background for a modern look */
+    color: #333; /* Dark text for contrast */
 }
 
+/* Centering the main container */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     padding: 20px;
+    background-color: #f4f7f6; /* Consistent background color */
 }
 
+/* Container for the form */
 .forgot-password-container {
-    background-color: var(--white); /* White background for form */
-    border-radius: 12px;
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px;
     padding: 30px;
-    max-width: 400px;
+    max-width: 360px; /* Slightly smaller max width for a more compact form */
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     text-align: center;
 }
 
+/* Heading styling */
 .forgot-password-container h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem; /* Slightly smaller font size for heading */
     margin-bottom: 20px;
-    color: var(--beige-dark); /* Darker beige for heading */
+    color: #007bff; /* Primary color for emphasis */
 }
 
+/* Paragraph styling */
 .forgot-password-container p {
     font-size: 1em;
     margin-bottom: 20px;
-    color: var(--gray);
+    color: #666; /* Medium gray for readability */
 }
 
+/* Form group styling */
 .form-group {
     margin-bottom: 20px;
     position: relative;
@@ -45,50 +51,54 @@ main {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
-    color: var(--beige-dark);
+    color: #007bff; /* Primary color for labels */
 }
 
+/* Input field styling */
 .form-group input {
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--gray-light);
-    border-radius: 8px;
+    border: 1px solid #ddd; /* Light gray border for inputs */
+    border-radius: 4px; /* Rounded corners for input fields */
     font-size: 1em;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus {
-    border-color: var(--gray);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-color: #007bff; /* Primary color on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Slight shadow on focus */
     outline: none;
 }
 
+/* Button styling */
 button {
     padding: 12px 20px;
     border: none;
-    background-color: var(--accent-color); /* Dark mustard yellow */
-    color: var(--white); /* White text */
+    background-color: #007bff; /* Primary color */
+    color: #fff; /* White text */
     font-size: 1em;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 4px; /* Rounded corners */
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 10px;
 }
 
 button:hover {
-    background-color: #a06d00; /* Darker mustard on hover */
+    background-color: #0056b3; /* Darker shade on hover */
     transform: translateY(-2px);
 }
 
+/* Paragraph styling for additional info */
 p {
     margin-top: 20px;
     font-size: 0.875rem;
-    color: var(--gray);
+    color: #666;
 }
 
+/* Link styling */
 a {
-    color: var(--accent-color); /* Dark mustard yellow */
+    color: #007bff; /* Primary color for links */
     text-decoration: none;
     font-weight: 600;
 }
