@@ -1,18 +1,18 @@
 // Utility function for smooth scrolling
-function smoothScroll(target) {
+const smoothScroll = (target) => {
     const element = document.querySelector(target);
     if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
     } else {
         console.error(`Element with selector ${target} not found.`);
     }
-}
+};
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', (e) => {
         e.preventDefault();
-        smoothScroll(this.getAttribute('href'));
+        smoothScroll(e.target.getAttribute('href'));
 
         // Close the navigation menu after clicking a link (for mobile view)
         const navLinks = document.getElementById('nav-links');
@@ -26,8 +26,8 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
 document.querySelectorAll('h2').forEach(heading => {
     heading.setAttribute('role', 'button');
     heading.setAttribute('tabindex', '0');
-    heading.addEventListener('click', function () {
-        const sectionContent = this.nextElementSibling;
+    heading.addEventListener('click', () => {
+        const sectionContent = heading.nextElementSibling;
         if (sectionContent) {
             sectionContent.classList.toggle('hidden');
             sectionContent.setAttribute('aria-expanded', sectionContent.classList.contains('hidden') ? 'false' : 'true');
@@ -36,32 +36,29 @@ document.querySelectorAll('h2').forEach(heading => {
 });
 
 // Toggle navigation menu on mobile view
-document.getElementById('menu-icon').addEventListener('click', function () {
+document.getElementById('menu-icon').addEventListener('click', () => {
     const navLinks = document.getElementById('nav-links');
     navLinks.classList.toggle('show');
 });
 
-// Debounced scroll event for updating the active link
-let debounceTimeout;
-window.addEventListener('scroll', () => {
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => {
-        let currentSectionId = '';
-        document.querySelectorAll('section').forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
+// Use Intersection Observer API for updating the active link
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.6
+};
 
+const observerCallback = (entries) => {
+    entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
         document.querySelectorAll('nav ul li a').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(currentSectionId)) {
-                link.classList.add('active');
-            }
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
         });
-    }, 100); // Adjust debounce time as needed
-});
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+document.querySelectorAll('section').forEach(section => observer.observe(section));
 
 // Optional: Light/Dark mode toggle with localStorage persistence
 const toggleButton = document.createElement('button');
